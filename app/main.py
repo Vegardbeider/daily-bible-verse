@@ -14,7 +14,7 @@ day = getDate()
 end = "_BM.mp3"
 fileName = day + end
 url = base + day + end
-path = "./output/"
+path = "/app/output/"
 
 result = requests.get(url)
 
