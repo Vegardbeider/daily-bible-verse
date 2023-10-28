@@ -44,3 +44,4 @@ result = requests.get(url)
 
 writeFile(path, fileName, result)
 writeFile(path, "latest.mp3", result)
+print("Finished downloding bible verse for", getDate())
