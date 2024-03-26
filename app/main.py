@@ -18,6 +18,13 @@ path = "/app/output/"
 
 result = requests.get(url)
 
-writeFile(path, fileName, result)
-writeFile(path, "latest.mp3", result)
-print("Finished downloding bible verse for", getDate())
+if result.status_code == 200:
+    writeFile(path, fileName, result)
+    writeFile(path, "latest.mp3", result)
+    print("Finished downloding bible verse for", getDate())
+else:
+    print("Failed to download bible verse for", getDate())
+    print("Status code:", result.status_code)
+    print("URL:", url)
+    print("Reason:", result.reason)
+    print("Content:", result.text)
